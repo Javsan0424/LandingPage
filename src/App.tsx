@@ -1,7 +1,8 @@
-
 import './App.css'
 
 function App() {
+  const baseUrl = import.meta.env.BASE_URL
+
   return (
     <>
       <section id="center">
@@ -14,7 +15,6 @@ function App() {
           <div>
             Proyectos destacados:
             <p>Portafolio 1</p>
-            
             <p>Portafolio 2</p>
           </div>
         </div>
@@ -25,136 +25,108 @@ function App() {
       <section id="next-steps">
         <div id="docs">
           <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
+            <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
           </svg>
           <h2>Portafolio 1</h2>
-          <p>https://drive.google.com/drive/folders/1fb9PE_rN9aIeQrcTryo9Rhz6Fl4xbE_l?usp=sharing</p>
+          <p>
+            <a 
+              href="https://drive.google.com/drive/folders/1fb9PE_rN9aIeQrcTryo9Rhz6Fl4xbE_l?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Ver Carpeta de Google Drive
+            </a>
+          </p>
         </div>
       </section>
-
-
-
-
 
       <br />
 
       <section id="portafolio-2">
         <div id="social">
           <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
+            <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
           </svg>
           <h2>Portafolio 2: Juego de la Independencia de México</h2>
           <p>
-            Como reto se nos encargo hacer un juego sobre la independencia de México
+            Como reto se nos encargó hacer un juego sobre la Independencia de México.
           </p>
 
-          {/* Información principal del reto y concepto */}
           <div className="portfolio-content">
             <article className="portfolio-card">
               <h3>Descripción del Reto</h3>
               <p>
-                Eres un general de la rebelión en la independencia de México. Tu deber es la de hacer una estrategia para ganar la batalla cuando el momento llegué. Morir significa que la estrategia no funcionará y por ende la rebelión fracasa si se ejecuta ese plan.
+                Eres un general de la rebelión en la Independencia de México. Tu deber es trazar una estrategia para ganar la batalla cuando llegue el momento. Morir significa que la estrategia no funcionará y la rebelión fracasará.
               </p>
             </article>
 
             <article className="portfolio-card">
               <h3>Concepto y Relación con la Independencia de México</h3>
               <p>
-               El general está planeando una estrategia que sea viable para la batalla que está por venir estando en desventaja debido a su armamento y personal.
+                El general está planeando una estrategia viable para la batalla, estando en clara desventaja de armamento y personal.
               </p>
             </article>
 
             <article className="portfolio-card">
               <h3>Estética Core, Dinámicas y Mecánicas</h3>
-              <p>Una estética core: Challenge
-El juego está hecho para ser progresivamente más difícil para que el jugador con cada vez más enemigos que tiene que eliminar y tiene que pensar en una estrategia para poder ganar la batalla.
-Restricción de diseño: Esta estética se puede probar en el combate por turnos ya que solo tienes tres personajes que controlas mientras que los enemigos vienen en oleadas.
-Dos dinámicas
-Define al menos dos dinámicas que emerjan durante la partida. Explica:
-La primera dinámica es la estrategia. El jugador está fomentado a tomar diferentes acciones según le convenga si atacar al enemigo, defenderse o descansar para recuperar MP.
-Frustración. El jugador solo tiene máximo tres personajes no importa lo que haga por lo que está destinado a perder a alguno de sus personajes a lo largo de la partida con la oleadas de enemigos.
-
-Ambas dinámicas ayudan a la estética de challenge ya que hacen a la experiencia más difícil y fomentan la estética de reto haciendo que la cantidad de enemigos hagan una dificultad más alta y recursos limitados que tienes que manejar..
-Tres mecánicas
-
-
-Mecánica de combate: el jugador tiene que seleccionar su acción del turno con los botones disponibles:
-Entradas: Ataque, ataque especial, proteger y descansar
-Tu ataque está limitado por tu stat de ataque y tu ataque especial por su stat de Ataque.
-No puedes recuperar más mana de máximo mana.
-Retroalimentación: Necesita más balanceo para que se sienta justo.
-Esto hace que el jugador sienta frustración como dinámica al tener muchos enemigos y la estética de challenge
-Mecánica de ataque: Un personaje solo puede atacar una vez por turno
-Entradas: N/A
-Todos los personajes solo pueden hacer una acción una vez por turnos y avanza primero quien tenga más velocidad.
-Como no se sube de nivel no hay manera de que haya dinámicas con la velocidad que fomenten el challenge.
-Relación con la dinámica y estática es que esto fomenta que el jugador tenga acciones limitadas por lo que fomenta la estrategia y la frustración ya que los enemigos en la oleada tres te superan en número y por ende tienen más acciones.
-Mecánica de ataque especial: un jugador tiene un ataque especial que puede infligir un estado a un enemigo como desangrado o quemado.
-Entrada del jugador: ataque especial
-Cada ataque especial tiene sus atributos y estados que puede infligir. Quemado hace que tengas menos ataque y desangrado hace que se pierda vida cada turno que pasa. También requieren que gastes puntos de MP para usarse por lo que si no tienes MP disponible no puedes usar el ataque.
-Los ataques hacen muy poco daño para lo que deberían por lo que la estrategia óptima es usar el ataque normal.
-Esto fomenta la estrategia ya que le da al jugador una opción más al combatir y como el mp es limitado genera frustración cuando no lo tienes en un punto crítico del enfrentamiento lo que ayuda con la estética challenge.
-</p>
+              <p><strong>Estética Core: Challenge</strong></p>
+              <p>
+                El juego aumenta su dificultad progresivamente con oleadas de enemigos. Se prueba en el combate por turnos, donde solo controlas tres personajes.
+              </p>
+              <p><strong>Dinámicas:</strong></p>
+              <ul>
+                <li><strong>Estrategia:</strong> El jugador decide entre atacar, defenderse o descansar para recuperar MP.</li>
+                <li><strong>Frustración:</strong> Al tener máximo tres personajes, el jugador está destinado a perder algunos durante las oleadas.</li>
+              </ul>
+              <p><strong>Mecánicas:</strong></p>
+              <ul>
+                <li><strong>Combate:</strong> Selección de acciones por turnos (Ataque, Ataque Especial, Proteger, Descansar).</li>
+                <li><strong>Ataque:</strong> Una acción por turno, orden ascendente según la velocidad del personaje.</li>
+                <li><strong>Ataque Especial:</strong> Inflige estados como quemado (baja ataque) o desangrado (daño por turno) consumiendo MP.</li>
+              </ul>
             </article>
 
-            {/* Multimedia */}
             <article className="portfolio-card">
               <h3>Gameplay</h3>
               <div className="media-container">
-                {/* Reemplaza con tus imágenes o video */}
-                <img src="Captura de pantalla 2026-09-18 193730.png" />
-                {/* <iframe src="URL_DEL_VIDEO" title="Video de Gameplay" allowFullScreen></iframe> */}
+                <img 
+                  src={`${baseUrl}Captura de pantalla 2026-09-18 193730.png`} 
+                  alt="Captura de pantalla de Gameplay" 
+                />
               </div>
             </article>
 
-            {/* Arquitectura Técnica */}
             <article className="portfolio-card">
               <h3>Patrones de Diseño Implementados</h3>
               <p>
-                State: Parcialmente
-Problema: Necesito saber el estado de los personajes si están vivos o muertos, saltarme sus turnos y si son enemigos eliminarlos de la escena
-Este patrón es adecuado debido a que necesito saber si un personaje está vivo para que pueda hacer su turno de lo contrario no puede hacer su accion.
-BattleField, TeamManager y EnemyManager
-
+                <strong>State (Parcial):</strong> Gestiona si un personaje está vivo o muerto para omitir su turno o eliminarlo de la escena (<code>BattleField</code>, <code>TeamManager</code>, <code>EnemyManager</code>).
               </p>
-
-              <p>Strategy
-Problema: Necesito gestionar ataques dependiendo de qué tipo de ataque especial 
-Este patrón me ayuda mucho ya que puedo manejar de forma efectiva diferentes ataques con el mismo método con ayuda de un scriptable object
-BattleField, Characterstat, EnemyIA, Attack
-</p>
+              <p>
+                <strong>Strategy:</strong> Gestiona distintos tipos de ataques especiales desde un mismo método mediante Scriptable Objects (<code>BattleField</code>, <code>Characterstat</code>, <code>EnemyIA</code>, <code>Attack</code>).
+              </p>
             </article>
 
             <article className="portfolio-card">
               <h3>Principales Decisiones y Retos Técnicos</h3>
               <p>
-                Decisiones técnicas relevantes y alternativas descartadas.
-Las ideas descartadas se debieron a falta de tiempo por lo que se optó por una versión más corta:
-Sistema de robo para obtener ataques especiales
-Sistema de subida de nivel
-Animación más complejas con sprites específicos
-Más ataques especiales que podía curar o nerfear estadísticas del enemigo.
-
+                Por limitaciones de tiempo se descartaron: sistema de robo para ataques, subida de nivel, animaciones complejas y ataques de curación o debuffeo.
               </p>
             </article>
 
             <article className="portfolio-card">
               <h3>Resultados de las Pruebas y Cambios Realizados</h3>
               <p>
-                El resumen de las Pruebas es que mayoría funciona bien y no hay nigun error fatal que destruya la experiencia aunque si hay un error al justo cuando sale el panel de la victoria con un error debido a que no hay enemigos en la lista de turnos
+                El juego funciona de forma estable sin errores fatales, salvo un bug menor al desplegar el panel de victoria si la lista de turnos de enemigos se vacía. Los ataques especiales requieren un rebalanceo para optimizar su uso frente al ataque estándar.
               </p>
-
-              <p>El juego es facil. Y por el momento los ataques especiales requieren de balanceo para que la experiencia de juego sea mejor.</p>
             </article>
           </div>
 
-          {/* Enlaces y Recursos Externos */}
           <h3 style={{ marginTop: '2rem' }}>Enlaces del Proyecto</h3>
           <ul>
             <li>
               <a href="https://javsan.itch.io/plan-attack" target="_blank" rel="noopener noreferrer">
                 <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#documentation-icon"></use>
+                  <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
                 </svg>
                 Juego Publicado
               </a>
@@ -162,7 +134,7 @@ Más ataques especiales que podía curar o nerfear estadísticas del enemigo.
             <li>
               <a href="https://docs.google.com/document/d/1fjPeTHmb0LuLwBh7lnoT2cT41wCFw5EKXXXzIedpVLo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#documentation-icon"></use>
+                  <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
                 </svg>
                 Game Design Document (GDD)
               </a>
@@ -170,7 +142,7 @@ Más ataques especiales que podía curar o nerfear estadísticas del enemigo.
             <li>
               <a href="https://docs.google.com/document/d/16CtuIt0z6bANAnuBGnBC0kyfO44NyYuO12rQrK2vlgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#documentation-icon"></use>
+                  <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
                 </svg>
                 Documentación Técnica
               </a>
